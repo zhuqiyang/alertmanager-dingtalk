@@ -3,14 +3,10 @@ include('functions.php');
 
 // 消息格式
 $type = 3;
-
 // access_token
 $ACCESS_TOKEN=$_ENV['ACCESS_TOKEN'];
-
 // 钉钉接口
 $webhook = "https://oapi.dingtalk.com/robot/send?access_token=$ACCESS_TOKEN";
-
-file_put_contents("/tmp/access.log", $ACCESS_TOKEN."------------\n", FILE_APPEND);
 
 // $data = $GLOBALS['HTTP_RAW_POST_DATA'];
 $data = file_get_contents('php://input');
