@@ -23,21 +23,20 @@ function getData($message, $type = 3){
 			),
 		);
 	}else if($type == 3){
-		$msg = "### [".$message['status']."] ".$message['alertname']."\n";
+		$msg = "### [".ucfirst($message['status'])."] ".$message['alertname']."\n";
 		$msg .= "> [".$message['message']."](".$message['generatorURL'].")\n\n";
 		$msg .= "> ----------------------------\n\n";
 		foreach ($message as $key => $value){
-			if ($key == "generatorURL" || $key == "version" || $key == "status"){
+			if ($key == "generatorURL" || $key == "version" || $key == "status" || $key == "fingerprint"){
 				continue;
 			}
-			$msg .= "#### ".$key.": ".$value."\n\n";
+			$msg .= "- ".$key.": ".$value."\n\n";
 		}
-		// 图片
 		//"> ![screenshot](https://gw.alicdn.com/tfs/TB1ut3xxbsrBKNjSZFpXXcXhFXa-846-786.png)\n";
 		$data = array(
 			'msgtype' => 'markdown',
 			'markdown' => array(
-				'title' => $message['alertname'],
+				'title' => "[".ucfirst($message['status'])."] ".$message['alertname'],
 				'text' => $msg
 			),
 		);
