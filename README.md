@@ -34,8 +34,32 @@ docker exec -it dingtalk tail -f /tmp/access.log
 
 镜像没有问题之后可以上传到镜像仓库，然后在kubernetes中使用即可。
 
-#### 在kubernetes中的使用
+##### 在kubernetes中的使用
 打开 dingtalk-deployment.yaml 文件修改环境变量 ACCESS_TOKEN 的值，保存后创建资源。
 ```console
 kubectl apply -f dingtalk-deployment.yaml
+```
+
+##### 将请求地址写到alertmanager的配置中即可
+如果是使用prometheus-operator部署的prometheus则可以修改 alertmanager-secret.yaml 文件，修改后应用资源文件即可。
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: alertmanager-main
+  namespace: monitoring
+stringData:
+  alertmanager.yaml: |-
+    global:
+    route:
+      group_by: ["alertname"]
+      group_wait: 30s
+      group_interval: 5m
+      repeat_interval: 10m
+      receiver: "web.hook"
+    receivers:
+    - name: "web.hook"
+      webhook_configs:
+      - url: "http://dingtalk.default.svc.cluster.local:5001" # 请求地址
+type: Opaque
 ```
