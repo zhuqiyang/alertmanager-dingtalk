@@ -3,8 +3,12 @@ include('functions.php');
 
 // 消息格式
 $type = 3;
+
+// TOKEN
+$TOKEN = '';
+
 // 钉钉接口
-$webhook = "https://oapi.dingtalk.com/robot/send?access_token=ad6c4b36695c1670ed27421f877c593c50d9ff9078d537fe2ff1201537961ea1";
+$webhook = "https://oapi.dingtalk.com/robot/send?access_token=$TOKEN";
 
 
 // $data = $GLOBALS['HTTP_RAW_POST_DATA'];
