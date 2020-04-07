@@ -23,11 +23,11 @@ function getData($message, $type = 3){
 			),
 		);
 	}else if($type == 3){
-		$msg = "### ".$message['alertname']."\n";
+		$msg = "### [".$message['status']."] ".$message['alertname']."\n";
 		$msg .= "> [".$message['message']."](".$message['generatorURL'].")\n\n";
 		$msg .= "> ----------------------------\n\n";
 		foreach ($message as $key => $value){
-			if ($key == "generatorURL" || $key == "version"){
+			if ($key == "generatorURL" || $key == "version" || $key == "status"){
 				continue;
 			}
 			$msg .= "#### ".$key.": ".$value."\n\n";

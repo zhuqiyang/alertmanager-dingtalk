@@ -15,8 +15,9 @@ spec:
       containers:
       - env:
         - name: ACCESS_TOKEN
-          value: "xxxxxxxxxxxxxxxxxxxx"
-        image: dingtalk:v2.0
+          value: "ad6c4b36695c1670ed27421f877c593c50d9ff9078d537fe2ff1201537961ea1"
+        image: dingtalk:v2.1
+        imagePullPolicy: IfNotPresent
         name: dingtalk
         ports:
         - name: dingtalk
