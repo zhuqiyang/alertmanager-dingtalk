@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dingtalk
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dingtalk
+  template:
+    metadata:
+      labels:
+        app: dingtalk
+    spec:
+      containers:
+      - env:
+        - name: ACCESS_TOKEN
+          value: "ad6c4b36695c1670ed27421f877c593c50d9ff9078d537fe2ff1201537961ea1"
+        image: dingtalk:v2.0
+        name: dingtalk
+        ports:
+        - name: dingtalk
+          containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dingtalk
+spec:
+  selector:
+    app: dingtalk
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 5001
+    targetPort: 80
