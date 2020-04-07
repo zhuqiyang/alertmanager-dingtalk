@@ -21,7 +21,7 @@ docker run --rm --name dingtalk -d -p 80:80 dingtalk:v1.0
 ```
 
 ##### 测试请求：
-如果超过会从钉钉里看到报警
+如果成功会从钉钉里看到报警
 ```console
 http://192.168.0.10/send.php
 ```
