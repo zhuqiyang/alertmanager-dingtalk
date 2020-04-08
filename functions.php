@@ -23,11 +23,12 @@ function getData($message, $type = 3){
 			),
 		);
 	}else if($type == 3){
+		$keys = array("receiver", "generatorURL", "version", "status", "fingerprint");
 		$msg = "### [".ucfirst($message['status'])."] ".$message['alertname']."\n";
 		$msg .= "> [".$message['message']."](".$message['generatorURL'].")\n\n";
 		$msg .= "> ----------------------------\n\n";
 		foreach ($message as $key => $value){
-			if ($key == "generatorURL" || $key == "version" || $key == "status" || $key == "fingerprint"){
+			if (in_array($key, $keys)){
 				continue;
 			}
 			$msg .= "- ".$key.": ".$value."\n\n";
