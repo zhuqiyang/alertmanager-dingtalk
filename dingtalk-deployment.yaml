@@ -16,7 +16,7 @@ spec:
       - env:
         - name: ACCESS_TOKEN
           value: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-        image: dingtalk:v2.1
+        image: zhuqiyang/dingtalk:1.0
         imagePullPolicy: IfNotPresent
         name: dingtalk
         ports:
