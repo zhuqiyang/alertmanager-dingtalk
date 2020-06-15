@@ -64,7 +64,7 @@ stringData:
 type: Opaque
 ```
 ##### 查看配置是否被加载
-需要将alertmanager的ClusterIP改成NodePort类型，如果没有加载查看配置文件是否写错了，一般的加载不成功都是配置格式写错了。
+需要将alertmanager的ClusterIP改成NodePort类型，如果新配置没有被加载一般都是配置格式写错了。
 ```console
 http://192.168.1.71:30808/#/status
 ```
