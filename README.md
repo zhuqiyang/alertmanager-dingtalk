@@ -66,5 +66,5 @@ type: Opaque
 ##### 查看配置是否被加载
 需要将alertmanager的ClusterIP改成NodePort类型，如果新配置没有被加载一般都是配置格式写错了。
 ```console
-http://192.168.1.71:30808/#/status
+http://192.168.1.10:30808/#/status
 ```
