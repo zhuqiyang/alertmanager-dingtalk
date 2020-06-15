@@ -63,7 +63,8 @@ stringData:
       - url: "http://dingtalk.default.svc.cluster.local:5001" # 请求地址,也可以使用ClusterIP
 type: Opaque
 ```
-##### 查看配置是否被加载：需要将alertmanager的ClusterIP改成NodePort类型
+##### 查看配置是否被加载
+需要将alertmanager的ClusterIP改成NodePort类型，如果没有加载查看配置文件是否写错了
 ```console
 http://192.168.1.71:30808/#/status
 ```
