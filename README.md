@@ -63,3 +63,7 @@ stringData:
       - url: "http://dingtalk.default.svc.cluster.local:5001" # 请求地址
 type: Opaque
 ```
+##### 查看配置是否被加载
+```console
+http://192.168.1.71:30808/#/status
+```
