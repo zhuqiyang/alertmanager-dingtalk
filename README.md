@@ -34,7 +34,7 @@ docker exec -it dingtalk tail -f /tmp/access.log
 
 镜像没有问题之后可以上传到镜像仓库，然后在kubernetes中使用即可。
 
-##### 在kubernetes中的使用
+### 在kubernetes中的使用
 打开 dingtalk-deployment.yaml 文件修改环境变量 ACCESS_TOKEN 的值，保存后创建资源。
 ```console
 kubectl apply -f dingtalk-deployment.yaml
