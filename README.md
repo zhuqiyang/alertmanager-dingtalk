@@ -17,6 +17,11 @@ docker build -t dingtalk:v1.0 .
 
 ##### 启动容器：
 ```console
+docker run --name dingtalk -d -p 80:80 -e ACCESS_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx dingtalk:v1.0
+```
+
+##### 或使用已经构建好的镜像：
+```console
 docker run --name dingtalk -d -p 80:80 -e ACCESS_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx docker.io/zhuqiyang/dingtalk:1.0
 ```
 
