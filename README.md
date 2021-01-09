@@ -21,7 +21,8 @@ docker build -t dingtalk:v1.0 .
 docker run --name dingtalk -d -p 80:80 dingtalk:1.0
 ```
 
-##### 使用已近构建好的镜像：需要修改 /var/www/html/token 文件
+##### 使用已近构建好的镜像：
+需要修改 /var/www/html/token 文件
 ```console
 docker run --name dingtalk -d -p 5002:80  docker.io/zhuqiyang/dingtalk:2.0
 docker exec -it dingtalk bash
