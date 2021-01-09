@@ -48,7 +48,8 @@ function sendMsg($msg)
         'text' => array ('content' => $msg.'.'),
     );
     $jsonMsg = json_encode($data);
-    $ACCESS_TOKEN='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+#    $ACCESS_TOKEN='ad6c4b36695c1670ed27421f877c593c50d9ff9078d537fe2ff1201537961ea1';
+    $ACCESS_TOKEN=trim(file_get_contents('token'));
     $webhook = "https://oapi.dingtalk.com/robot/send?access_token=$ACCESS_TOKEN";
     $result = request_by_curl($webhook, $jsonMsg);
     print_r($result);
