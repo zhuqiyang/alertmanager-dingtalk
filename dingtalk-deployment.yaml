@@ -13,9 +13,6 @@ spec:
         app: dingtalk
     spec:
       containers:
-      - env:
-        - name: ACCESS_TOKEN
-          value: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         image: zhuqiyang/dingtalk:1.0
         imagePullPolicy: IfNotPresent
         name: dingtalk
