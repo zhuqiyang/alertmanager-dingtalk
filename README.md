@@ -6,8 +6,9 @@
 
 ##### 脚本列表：
 + index.php 主服务脚本
-+ functions.php 用到的一些函数
 + send.php 测试脚本
++ token 钉钉的token
++ test.txt 测试用的数据
 
 
 ##### 制作镜像：
