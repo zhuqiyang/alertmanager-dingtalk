@@ -1,3 +1,3 @@
 FROM php:apache
 
-COPY index.php send.php /var/www/html/
+COPY index.php send.php token test.txt /var/www/html/
